@@ -1,0 +1,43 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+*.iml
+.vscode/
+*.swp
+*.swo
+
+# Build / artifacts
+build/
+dist/
+out/
+target/
+*.class
+*.jar
+*.war
+*.apk
+*.aab
+*.dex
+
+# Dependencies
+node_modules/
+.gradle/
+local.properties
+
+# Logs & env
+*.log
+.env
+.env.*
+!.env.example
+
+# Coverage & caches
+.coverage
+htmlcov/
+.pytest_cache/
+__pycache__/
+*.pyc
+.turbo/
+.next/
+.nuxt/
