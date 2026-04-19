@@ -89,6 +89,9 @@ body {
   align-items: center;
   column-gap: 1rem;
   row-gap: 12px;
+  /* Fill the hero width so margin: 0 auto only centers when max-width caps the bar;
+     without this, a shrink-wrapped flex/grid nav gets huge side margins on mobile. */
+  width: 100%;
   max-width: 1440px;
   margin: 0 auto;
   padding: 16px clamp(20px, 5vw, 120px);
@@ -299,9 +302,11 @@ body {
 
 .nav-toggle {
   display: none;
-  justify-self: end;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  justify-self: end;
+  gap: 5px;
   width: 48px;
   height: 48px;
   padding: 0;
@@ -315,7 +320,49 @@ body {
   width: 24px;
   height: 2px;
   background: var(--accent);
-  margin: 2.5px 0;
+  margin: 0;
+}
+
+/* Mobile menu panel — hidden on desktop; opened via JS under max-width breakpoint */
+@media (min-width: 601px) {
+  .nav-mobile-menu {
+    display: none !important;
+  }
+}
+
+.nav-mobile-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-mobile-link {
+  display: block;
+  padding: 16px 0;
+  text-decoration: none;
+  color: var(--text);
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: background-color 0.2s ease;
+}
+
+.nav-mobile-list li:last-child .nav-mobile-link {
+  border-bottom: none;
+}
+
+.nav-mobile-link:hover,
+.nav-mobile-link:focus-visible {
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
+.nav-mobile-cta {
+  margin-top: 20px;
+  width: 100%;
+  max-width: none;
 }
 
 /* ---------- Featured Projects — Figma node 40004121:12973 ---------- */
@@ -1586,15 +1633,20 @@ body {
 
 /* Mobile — Figma node 40004121:12816 (390px frame) */
 @media (max-width: 600px) {
+  /* Flex beats leftover tablet grid/center rules (900px): logo flush left, menu flush right */
   .nav {
-    grid-template-columns: 1fr auto;
-    justify-items: start;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px 16px;
     padding: 8px 20px;
-    row-gap: 0;
+    text-align: start;
   }
 
   .logo {
-    justify-self: start;
+    justify-self: unset;
+    text-align: left;
     font-size: 1.1rem;
   }
 
@@ -1605,7 +1657,29 @@ body {
 
   .nav-toggle {
     display: inline-flex;
-    justify-self: end;
+    flex-shrink: 0;
+  }
+
+  /* Mobile nav dropdown — Figma node 40004121:12829 */
+  .nav-mobile-menu {
+    flex: 1 0 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    padding: 8px 20px 24px;
+    background: rgba(8, 8, 10, 0.97);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 28px 48px rgba(0, 0, 0, 0.45);
+    z-index: 50;
+  }
+
+  .nav-mobile-list {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
   }
 
   .main {
@@ -1983,5 +2057,602 @@ body {
   .site-footer-top-link svg {
     width: 20px;
     height: 20px;
+  }
+}
+
+/* ---------- Start project page — Figma 40004121:12798 ---------- */
+
+.page.page-start,
+.page.page-studio {
+  --text: #212121;
+  --text-muted: #616161;
+  background: #ffffff;
+  color: #212121;
+}
+
+.page-start > .nav.nav--light {
+  background: transparent;
+  box-shadow: none;
+}
+
+.page-start .nav--light .menu-link,
+.page-studio .nav--light .menu-link {
+  color: #212121;
+}
+
+.page-start .nav--light .menu-link:hover,
+.page-studio .nav--light .menu-link:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+.page-start .cta--nav-dark,
+.page-studio .cta--nav-dark {
+  min-width: 200px;
+  width: 220px;
+  max-width: 100%;
+  padding: 14px;
+  background: #1c1b17;
+  color: #ffffff;
+  border: none;
+  box-shadow: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+.page-start .cta--nav-dark:hover,
+.page-studio .cta--nav-dark:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.18);
+  color: #ffffff;
+}
+
+.page-start .cta--nav-dark:active,
+.page-studio .cta--nav-dark:active {
+  transform: translateY(0);
+}
+
+.start-main {
+  padding: 100px clamp(20px, 5vw, 120px) 120px;
+}
+
+.start-layout {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: clamp(32px, 4vw, 48px);
+  max-width: 1728px;
+  margin: 0 auto;
+}
+
+.start-intro {
+  flex: 0 1 360px;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.start-kicker {
+  margin: 0;
+  font-family: "Be Vietnam Pro", "Inter", system-ui, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: 0.2px;
+  text-transform: uppercase;
+  color: #fe3d22;
+}
+
+.start-intro-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.start-title {
+  margin: 0;
+  font-family: "Inter", "Be Vietnam Pro", system-ui, sans-serif;
+  font-size: clamp(36px, 4.5vw, 52px);
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.04em;
+  color: #000000;
+}
+
+.start-lead,
+.start-aside {
+  margin: 0;
+  font-family: "Be Vietnam Pro", "Inter", system-ui, sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #616161;
+}
+
+.start-aside a {
+  font-weight: 700;
+  color: #1c1b17;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+}
+
+.start-aside a:hover,
+.start-aside a:focus-visible {
+  color: #fe3d22;
+}
+
+.start-form-card {
+  flex: 1 1 480px;
+  max-width: 800px;
+  width: 100%;
+  margin-left: auto;
+  box-sizing: border-box;
+  padding: 40px;
+  background: #fafafa;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.start-fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+}
+
+.start-legend {
+  margin: 0 0 14px;
+  padding: 0;
+  font-family: "Be Vietnam Pro", "Inter", system-ui, sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #616161;
+}
+
+.start-required {
+  color: #fe3d22;
+}
+
+.start-chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.start-chip {
+  position: relative;
+  cursor: pointer;
+}
+
+.start-chip input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  margin: 0;
+}
+
+/* Chips — Figma 40004121:12812: default border #e0e0e0; selected fill #1c1b17 + white label */
+.start-chip span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 20px;
+  border-radius: 1000px;
+  border: 1px solid #e0e0e0;
+  background: #ffffff;
+  font-family: "Be Vietnam Pro", "Inter", system-ui, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.6;
+  letter-spacing: 0.2px;
+  color: #212121;
+  transition: border-color 0.15s ease, background-color 0.15s ease, color 0.15s ease;
+}
+
+.start-chip:hover span {
+  border-color: #b4b4b4;
+}
+
+.start-chip input:focus-visible + span {
+  outline: 2px solid #1c1b17;
+  outline-offset: 2px;
+}
+
+.start-chip input:checked + span {
+  border-color: #1c1b17;
+  background: #1c1b17;
+  color: #ffffff;
+}
+
+.start-chip input:checked:hover + span {
+  border-color: #000000;
+  background: #000000;
+  color: #ffffff;
+}
+
+/* Text fields — Figma 40004121:12812 (Input Form): accent bottom border #fe3d22, label/body #212121 */
+.start-fields-block {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.start-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 12px 0;
+  border-bottom: 1px solid #fe3d22;
+}
+
+.start-field-label {
+  font-family: "Be Vietnam Pro", "Inter", system-ui, sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #212121;
+}
+
+.start-field input,
+.start-field textarea {
+  width: 100%;
+  margin: 0;
+  padding: 8px 0 0;
+  border: none;
+  background: transparent;
+  font-family: "Be Vietnam Pro", "Inter", system-ui, sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #212121;
+  resize: vertical;
+  min-height: 0;
+}
+
+.start-field input:focus,
+.start-field textarea:focus {
+  outline: none;
+}
+
+.start-field--tall textarea {
+  min-height: 120px;
+}
+
+.start-form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 24px 32px;
+}
+
+.start-submit {
+  flex: 0 0 auto;
+  width: 220px;
+  max-width: 100%;
+  padding: 14px;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 1000px;
+  background: #1c1b17;
+  color: #ffffff;
+  font-family: "Be Vietnam Pro", "Inter", system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+  line-height: 1.6;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.start-submit-text--mobile {
+  display: none;
+}
+
+.start-submit:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.18);
+}
+
+.start-submit:active {
+  transform: translateY(0);
+}
+
+.start-disclaimer {
+  flex: 1 1 200px;
+  margin: 0;
+  font-family: "Be Vietnam Pro", "Inter", system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: 0.2px;
+  color: #616161;
+  text-align: right;
+}
+
+.start-disclaimer a {
+  color: #1c1b17;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.start-disclaimer a:hover,
+.start-disclaimer a:focus-visible {
+  text-decoration: underline;
+}
+
+@media (max-width: 1100px) {
+  .start-form-card {
+    margin-left: 0;
+    max-width: none;
+  }
+
+  .start-intro {
+    max-width: none;
+    flex-basis: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .page-start .nav-mobile-menu,
+  .page-studio .nav-mobile-menu {
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: 0 28px 48px rgba(0, 0, 0, 0.12);
+  }
+
+  .page-start .nav-mobile-link,
+  .page-studio .nav-mobile-link {
+    color: #212121;
+    border-bottom-color: rgba(0, 0, 0, 0.08);
+  }
+
+  .page-start .nav-mobile-link:hover,
+  .page-start .nav-mobile-link:focus-visible,
+  .page-studio .nav-mobile-link:hover,
+  .page-studio .nav-mobile-link:focus-visible {
+    background-color: rgba(0, 0, 0, 0.04);
+  }
+
+  /* Intro — tighter mobile rhythm alongside form */
+  .start-layout {
+    gap: 32px;
+  }
+
+  .start-title {
+    font-size: 32px;
+    letter-spacing: -0.03em;
+  }
+
+  .start-lead,
+  .start-aside {
+    font-size: 18px;
+  }
+
+  .start-kicker {
+    font-size: 14px;
+  }
+
+  .start-main {
+    padding: 48px 20px 64px;
+  }
+
+  /* Form card — Figma 40004121:12795 / Message. Mobile: py 40, single 20px gutter via .start-main */
+  .start-form-card {
+    padding: 40px 0;
+  }
+
+  /* Section labels — mobile 18px (desktop legend stays 20px above this breakpoint) */
+  .start-legend {
+    font-size: 18px;
+  }
+
+  /* Service chips: full-width stack, centered — Figma Message. Mobile */
+  .start-fieldset:first-of-type .start-chip-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .start-fieldset:first-of-type .start-chip {
+    width: 100%;
+    max-width: 350px;
+  }
+
+  .start-fieldset:first-of-type .start-chip span {
+    width: 100%;
+    min-height: 68px;
+    box-sizing: border-box;
+    white-space: normal;
+    text-align: center;
+  }
+
+  /* Text fields — mobile spec uses Grey-300 underline + 18px grey labels */
+  .start-field {
+    border-bottom-color: #b4b4b4;
+  }
+
+  .start-field-label {
+    font-size: 18px;
+    color: #616161;
+  }
+
+  .start-field input,
+  .start-field textarea {
+    font-size: 18px;
+  }
+
+  .start-form-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 32px;
+  }
+
+  .start-submit {
+    width: 100%;
+  }
+
+  .start-submit-text--desktop {
+    display: none;
+  }
+
+  .start-submit-text--mobile {
+    display: inline;
+  }
+
+  /* Figma: legal line full width, right-aligned */
+  .start-disclaimer {
+    text-align: right;
+  }
+}
+
+/* ---------- Studio page — Figma 40004121:12411 (Who we are) ---------- */
+
+.page-studio > .nav.nav--light.nav--fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  max-width: none;
+  width: 100%;
+  margin: 0;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+}
+
+.studio-main {
+  padding: clamp(88px, 12vh, 120px) clamp(20px, 5vw, 120px) clamp(64px, 8vw, 120px);
+}
+
+.studio-about {
+  background: #ffffff;
+}
+
+.studio-about-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(48px, 6vw, 64px);
+}
+
+.studio-about-intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+  text-align: center;
+}
+
+.studio-about-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+  width: 100%;
+}
+
+.studio-about-title {
+  margin: 0;
+  font-family: "Be Vietnam Pro", "Inter", system-ui, sans-serif;
+  font-size: clamp(36px, 5vw, 52px);
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.04em;
+  color: #1c1b17;
+}
+
+.studio-about-title-muted {
+  color: #9e9e9e;
+}
+
+.studio-about-lead {
+  max-width: 684px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.studio-about-lead p {
+  margin: 0;
+  font-family: "Inter", "Be Vietnam Pro", system-ui, sans-serif;
+  font-size: clamp(16px, 1.6vw, 20px);
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: -0.04em;
+  color: #616161;
+}
+
+.studio-about-lead p + p {
+  margin-top: 0.35em;
+}
+
+.studio-about-cta {
+  width: 220px;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.studio-about-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 16px;
+  width: 100%;
+}
+
+.studio-about-media {
+  width: 100%;
+  background: #dedede;
+  overflow: hidden;
+}
+
+.studio-about-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.studio-stats-row {
+  max-width: 1200px;
+}
+
+.menu-link[aria-current="page"],
+.nav-mobile-link[aria-current="page"] {
+  font-weight: 600;
+}
+
+@media (max-width: 600px) {
+  .studio-main {
+    padding: 72px 20px 64px;
+  }
+
+  .studio-about-intro {
+    gap: 32px;
+  }
+
+  .studio-about-copy {
+    gap: 32px;
+  }
+
+  .studio-about-title {
+    font-size: 32px;
+    letter-spacing: -0.03em;
+  }
+
+  .studio-about-lead p {
+    font-size: 18px;
+    letter-spacing: 0.2px;
   }
 }

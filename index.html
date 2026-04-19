@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Inter:wght@400;500&family=Plus+Jakarta+Sans:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./styles.css" />
@@ -28,18 +28,36 @@
               <ul class="menu">
                 <li><a class="menu-link" href="#work">Work</a></li>
                 <li><a class="menu-link" href="#services">Services</a></li>
-                <li><a class="menu-link" href="#studio">Studio</a></li>
+                <li><a class="menu-link" href="./studio.html">Studio</a></li>
                 <li><a class="menu-link" href="#contact">Contact</a></li>
               </ul>
             </nav>
           </div>
           <div class="nav-cta">
-            <button type="button" class="cta">Start a project</button>
+            <a class="cta" href="./start-project.html">Start a project</a>
           </div>
-          <button type="button" class="nav-toggle" aria-label="Open menu">
-            <span class="nav-toggle-bar"></span>
-            <span class="nav-toggle-bar"></span>
+          <button
+            type="button"
+            class="nav-toggle"
+            id="nav-toggle"
+            aria-expanded="false"
+            aria-controls="nav-mobile-panel"
+            aria-label="Open menu"
+          >
+            <span class="nav-toggle-bar" aria-hidden="true"></span>
+            <span class="nav-toggle-bar" aria-hidden="true"></span>
           </button>
+          <div class="nav-mobile-menu" id="nav-mobile-panel" hidden>
+            <nav aria-label="Primary (mobile)">
+              <ul class="nav-mobile-list">
+                <li><a class="nav-mobile-link" href="#work">Work</a></li>
+                <li><a class="nav-mobile-link" href="#services">Services</a></li>
+                <li><a class="nav-mobile-link" href="./studio.html">Studio</a></li>
+                <li><a class="nav-mobile-link" href="#contact">Contact</a></li>
+              </ul>
+              <a class="cta nav-mobile-cta" href="./start-project.html">Start a project</a>
+            </nav>
+          </div>
         </header>
 
         <main class="main">
@@ -55,7 +73,7 @@
               We design intuitive, modern interfaces for startups and growing businesses —
               from concept to final UI
             </p>
-            <button type="button" class="cta">Start a project</button>
+            <a class="cta" href="./start-project.html">Start a project</a>
           </div>
 
           <div class="phone-section" aria-hidden="true">
@@ -385,7 +403,7 @@
                   <span class="pricing-price-value">$8,500</span>
                 </div>
               </div>
-              <a href="#contact" class="cta pricing-cta">Start a Project</a>
+              <a href="./start-project.html" class="cta pricing-cta">Start a Project</a>
             </li>
 
             <li class="pricing-card">
@@ -416,7 +434,7 @@
                   <span class="pricing-price-period">/month</span>
                 </div>
               </div>
-              <a href="#contact" class="cta pricing-cta">Start a Project</a>
+              <a href="./start-project.html" class="cta pricing-cta">Start a Project</a>
             </li>
 
             <li class="pricing-card">
@@ -447,7 +465,7 @@
                   <span class="pricing-price-period">/hour</span>
                 </div>
               </div>
-              <a href="#contact" class="cta pricing-cta">Start a Project</a>
+              <a href="./start-project.html" class="cta pricing-cta">Start a Project</a>
             </li>
           </ul>
         </div>
@@ -548,7 +566,7 @@
             <h2 class="final-cta-title" id="final-cta-title">Let&rsquo;s Create Together</h2>
             <p class="final-cta-subtitle">Get set to turn your awesome ideas into something real!</p>
           </div>
-          <a href="#contact" class="final-cta-button">Request design</a>
+          <a href="./start-project.html" class="final-cta-button">Request design</a>
         </div>
       </section>
 
@@ -576,6 +594,7 @@
                 <ul class="site-footer-links">
                   <li><a href="#hero">Home</a></li>
                   <li><a href="#work">Work</a></li>
+                  <li><a href="./studio.html">Studio</a></li>
                   <li><a href="#about">About</a></li>
                   <li><a href="#contact">Contact</a></li>
                 </ul>
@@ -612,5 +631,51 @@
         </div>
       </footer>
     </div>
+    <script>
+      (function () {
+        var nav = document.querySelector(".nav");
+        var btn = document.getElementById("nav-toggle");
+        var panel = document.getElementById("nav-mobile-panel");
+        if (!nav || !btn || !panel) return;
+
+        function setOpen(open) {
+          nav.classList.toggle("nav--menu-open", open);
+          btn.setAttribute("aria-expanded", open ? "true" : "false");
+          btn.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+          if (open) {
+            panel.removeAttribute("hidden");
+          } else {
+            panel.setAttribute("hidden", "");
+          }
+        }
+
+        btn.addEventListener("click", function () {
+          setOpen(!nav.classList.contains("nav--menu-open"));
+        });
+
+        panel.querySelectorAll("a, button").forEach(function (el) {
+          el.addEventListener("click", function () {
+            setOpen(false);
+          });
+        });
+
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape" && nav.classList.contains("nav--menu-open")) {
+            setOpen(false);
+            btn.focus();
+          }
+        });
+
+        document.addEventListener("click", function (e) {
+          if (!nav.classList.contains("nav--menu-open")) return;
+          if (!nav.contains(e.target)) setOpen(false);
+        });
+
+        var mq = window.matchMedia("(max-width: 600px)");
+        mq.addEventListener("change", function () {
+          if (!mq.matches && nav.classList.contains("nav--menu-open")) setOpen(false);
+        });
+      })();
+    </script>
   </body>
 </html>
