@@ -55,7 +55,7 @@
                 <li><a class="nav-mobile-link" href="./studio.html">Studio</a></li>
                 <li><a class="nav-mobile-link" href="#contact">Contact</a></li>
               </ul>
-              <a class="cta nav-mobile-cta" href="./start-project.html">Start a project</a>
+              <a class="cta cta--nav-dark nav-mobile-cta" href="./start-project.html">Start a project</a>
             </nav>
           </div>
         </header>
@@ -640,6 +640,7 @@
 
         function setOpen(open) {
           nav.classList.toggle("nav--menu-open", open);
+          document.body.classList.toggle("nav-mobile-open", open);
           btn.setAttribute("aria-expanded", open ? "true" : "false");
           btn.setAttribute("aria-label", open ? "Close menu" : "Open menu");
           if (open) {
