@@ -1,0 +1,495 @@
+{
+  "meta": {
+    "title": "DEMKA DESIGN — Jenzi"
+  },
+  "a11y": {
+    "navPrimary": "Primary",
+    "navPrimaryMobile": "Primary (mobile)",
+    "menuOpen": "Open menu",
+    "menuClose": "Close menu",
+    "footerTitle": "Site footer",
+    "footerLogoHome": "Demka Design — home",
+    "backToTop": "Back to top",
+    "projectEcommerceAria": "Open E-commerce Platform case study",
+    "projectTaxiAria": "Open Taxi Service case study",
+    "processSection": "Our Process",
+    "aboutSection": "About Studio",
+    "pricingSection": "Pricing",
+    "testimonialsSection": "Client testimonials",
+    "finalCtaSection": "Contact call to action",
+    "studioTaglineSection": "Studio tagline",
+    "aboutImageAlt": "Two people sharing a moment",
+    "brandMarkAlt": "Demka Design mark",
+    "footerLogoAlt": "Demka Design",
+    "langSwitcher": "Language",
+    "langMenuChoose": "Choose language"
+  },
+  "nav": {
+    "work": "Work",
+    "services": "Services",
+    "studio": "Studio",
+    "contact": "Contact",
+    "cta": "Start a project"
+  },
+  "hero": {
+    "line1": "Turning complex ideas",
+    "into": "into",
+    "muted": " clear digital products",
+    "subtitle": "We design intuitive, modern interfaces for startups and growing businesses — from concept to final UI"
+  },
+  "work": {
+    "mark": "Work",
+    "title": "Featured Projects",
+    "subtitle": "A curated selection of our recent work across branding, digital design, and interactive experiences",
+    "explore": "Explore all projects"
+  },
+  "workPage": {
+    "meta": {
+      "title": "Work — DEMKA DESIGN"
+    },
+    "hero": {
+      "titleStrong": "Ideas Made ",
+      "titleMuted": "Real",
+      "lead": "We help entrepreneurs and experts turn raw ideas into working IT products. Here we have gathered project stories."
+    },
+    "projectsTitle": "Featured projects",
+    "cards": {
+      "ecommerce": {
+        "title": "E-commerce Platform",
+        "description": "Online store for a local brand with 1C and CDEK integration, loyalty system, promo codes, and stories",
+        "imgAlt": "E-commerce Platform project preview"
+      },
+      "dating": {
+        "title": "Dating App",
+        "description": "Subscription-based dating app with a unique gamified experience. Designed for the Turkish market",
+        "imgAlt": "Dating App project preview"
+      },
+      "englishLearning": {
+        "title": "English Learning",
+        "description": "Self-paced English learning platform using AI and gamification, with flexible lesson setup",
+        "imgAlt": "English Learning project preview"
+      },
+      "finance": {
+        "title": "Finance Tracker",
+        "description": "A personal finance management app with bank integrations and real-time market data via API",
+        "imgAlt": "Finance Tracker project preview"
+      },
+      "financeManagement": {
+        "title": "Finance Management",
+        "description": "Mobile assistant for tracking income, expenses, and assets with clear analytics and a full financial picture",
+        "imgAlt": "Finance Management project preview"
+      },
+      "sportsPredictions": {
+        "title": "Sports Predictions",
+        "description": "Sports analytics and predictions platform with expert evaluations and performance statistics",
+        "imgAlt": "Sports Predictions project preview"
+      },
+      "healthApp": {
+        "title": "Health App",
+        "description": "Meditation app with a simple interface and a calm, uncluttered user experience",
+        "imgAlt": "Health App project preview"
+      },
+      "cryptoCrowdfunding": {
+        "title": "Crypto Crowdfunding",
+        "description": "Investment and digital purchase platform with an internal wallet, currency, and offer system",
+        "imgAlt": "Crypto Crowdfunding project preview"
+      },
+      "loyaltyPlatform": {
+        "title": "Loyalty Platform",
+        "description": "Offline business loyalty platform with bonuses, QR codes, and customer tools",
+        "imgAlt": "Loyalty Platform project preview"
+      },
+      "kidsTasks": {
+        "title": "Kids Tasks",
+        "description": "Child task management app with points, rewards, and mentor interaction",
+        "imgAlt": "Kids Tasks project preview"
+      },
+      "hiringPlatform": {
+        "title": "Hiring Platform",
+        "description": "Marketplace for finding specialists and posting tasks with ratings and built-in messaging",
+        "imgAlt": "Hiring Platform project preview"
+      },
+      "transportService": {
+        "title": "Transport Service",
+        "description": "Platform where users create trips and drivers respond to complete them",
+        "imgAlt": "Transport Service project preview"
+      },
+      "productScanner": {
+        "title": "Product Scanner",
+        "description": "App for scanning products and analyzing ingredients with quality scores and detailed information",
+        "imgAlt": "Product Scanner project preview"
+      },
+      "p2pCarMarketplace": {
+        "title": "P2P Car Marketplace",
+        "description": "Peer-to-peer car rental platform with booking, payment, and reviews",
+        "imgAlt": "P2P Car Marketplace project preview"
+      },
+      "drivingSchool": {
+        "title": "Driving School",
+        "description": "Service for booking lessons with instructors and accessing theory materials",
+        "imgAlt": "Driving School project preview"
+      },
+      "taxi": {
+        "title": "Taxi Service",
+        "description": "A taxi platform for small cities in the Chelyabinsk region, including passenger and driver apps, along with an admin panel tailored to local infrastructure",
+        "imgAlt": "Taxi Service project preview"
+      }
+    },
+    "finalCta": {
+      "title": "Let's Create Together",
+      "subtitle": "Get set to turn your awesome ideas into something real!",
+      "button": "Request design"
+    }
+  },
+  "projects": {
+    "ecommerce": {
+      "title": "E-commerce Platform",
+      "description": "Online store for a local brand with 1C and CDEK integration, loyalty system, promo codes, and stories",
+      "imgAlt": "E-commerce Platform project preview"
+    },
+    "dating": {
+      "title": "Dating App",
+      "description": "Subscription-based dating app with a unique gamified experience. Designed for the Turkish market",
+      "imgAlt": "Dating App project preview"
+    },
+    "taxi": {
+      "title": "Taxi Service",
+      "description": "A taxi platform for small cities in the Chelyabinsk region, including passenger and driver apps, along with an admin panel tailored to local infrastructure",
+      "imgAlt": "Taxi Service project preview"
+    },
+    "finance": {
+      "title": "Finance Tracker",
+      "description": "A personal finance management app with bank integrations and real-time market data via API",
+      "imgAlt": "Finance Tracker project preview"
+    }
+  },
+  "services": {
+    "sectionMark": "What We Do",
+    "sectionTitle": "Our Services",
+    "sectionSubtitle": "Comprehensive design and development services to transform your vision into reality",
+    "s01": {
+      "title1": "Product Research ",
+      "title2": "& Analysis",
+      "items": [
+        "Product and business analysis",
+        "UX audits",
+        "Market and competitor research",
+        "Defining product requirements"
+      ]
+    },
+    "s02": {
+      "title": "UX Design",
+      "items": [
+        "Product structure design (information architecture)",
+        "User flows and scenarios",
+        "Wireframes and prototypes"
+      ]
+    },
+    "s03": {
+      "title": "UI/UX Design",
+      "items": [
+        "Mobile app design (iOS / Android)",
+        "Web platforms and services",
+        "Website and landing page design",
+        "Product redesign (web, services, and mobile apps)",
+        "UI kits, design systems and component libraries"
+      ]
+    },
+    "s04": {
+      "title": "Product Launch",
+      "items": [
+        "MVP design for startups",
+        "Product concept and visual direction"
+      ]
+    },
+    "s05": {
+      "title": "Development Support",
+      "items": [
+        "Design handoff",
+        "Design review during development",
+        "Implementation quality control"
+      ]
+    },
+    "s06": {
+      "title1": "Development ",
+      "title2": "Management",
+      "items": [
+        "Hiring development teams via partner studios",
+        "Product delivery quality control"
+      ]
+    }
+  },
+  "process": {
+    "sectionMark": "Our Process",
+    "sectionTitle": "How We Work",
+    "sectionSubtitle": "A proven methodology that delivers exceptional results through collaboration and iteration",
+    "steps": [
+      {
+        "title": "Discovery",
+        "description": "We start by understanding your goals, audience, and vision through collaborative workshops."
+      },
+      {
+        "title": "Strategy",
+        "description": "We develop a comprehensive strategy that aligns design decisions with business objectives."
+      },
+      {
+        "title": "Design",
+        "description": "Our team creates stunning visual designs and interactive prototypes for validation."
+      },
+      {
+        "title": "Development",
+        "description": "We bring designs to life with clean, performant code and meticulous attention to detail."
+      },
+      {
+        "title": "Launch",
+        "description": "We ensure a smooth launch and provide ongoing support to maximize your success."
+      }
+    ]
+  },
+  "about": {
+    "sectionMark": "About Studio",
+    "title1": "We're a team",
+    "title2": "of creative minds",
+    "p1": "Founded in 2018, our studio brings together world-class designers and developers who share a passion for creating exceptional digital experiences.",
+    "p2": "We believe in the power of design to transform businesses and create meaningful connections with audiences. Every project is an opportunity to push boundaries and craft something extraordinary.",
+    "cta": "Let's Talk",
+    "statProjects": "Projects Delivered",
+    "statClients": "Happy Clients",
+    "statYears": "Years Experience"
+  },
+  "pricing": {
+    "sectionMark": "Pricing",
+    "sectionTitle": "Flexible plans for every business",
+    "sectionSubtitle": "Clear pricing, no hidden fees. Choose the plan that works best for your goals.",
+    "full": {
+      "title": "Full Project",
+      "description": "We handle the entire design process — from research to final UI.<br />Best for new products, MVPs, and full redesigns.",
+      "f1": "End-to-end process",
+      "f2": "Clear scope",
+      "f3": "Structured delivery",
+      "cta": "Start a Project"
+    },
+    "team": {
+      "title": "Dedicated Team",
+      "description": "A design team integrated into your workflow for ongoing product development.<br />Ideal for long-term collaboration and scaling products.",
+      "f1": "Monthly collaboration",
+      "f2": "Flexible scope",
+      "f3": "Continuous support",
+      "cta": "Start a Project",
+      "period": "/month"
+    },
+    "ondemand": {
+      "title": "On-Demand",
+      "description": "Flexible design support for specific tasks or quick iterations.<br />Perfect for small improvements, updates, or urgent needs",
+      "f1": "Hourly work",
+      "f2": "Fast turnaround",
+      "f3": "No long-term commitment",
+      "cta": "Start a Project",
+      "period": "/hour"
+    }
+  },
+  "testimonials": {
+    "sectionMark": "Client Testimonials",
+    "sectionTitle": "What Clients Say",
+    "sectionSubtitle": "Don't just take our word for it—hear from the brands we've had the privilege to work with",
+    "cards": [
+      {
+        "text": "The team's multidisciplinary skills blew us away. From AR to 3D animation, they delivered a seamless project that exceeded expectations.",
+        "name": "David Kim",
+        "role": "Creative Director at Horizon"
+      },
+      {
+        "text": "Working with Studio was transformative. They understood our vision and delivered a brand identity that exceeded all expectations",
+        "name": "Olivia White",
+        "role": "Operations Lead at Flow Digital"
+      },
+      {
+        "text": "The team's expertise in UX design completely revolutionized our product. User engagement increased by 300% after the redesign.",
+        "name": "Olivia White",
+        "role": "Operations Lead at Flow Digital"
+      },
+      {
+        "text": "Professional, creative, and always ahead of schedule. Studio brought our e-commerce platform to life with a design that's both beautiful and conversion-focused",
+        "name": "Olivia White",
+        "role": "Operations Lead at Flow Digital"
+      },
+      {
+        "text": "Their designs don't just look great; they perform. Since launch, our platform saw a 160% increase in user retention.",
+        "name": "Noah Williams",
+        "role": "CTO at SphereWorks"
+      }
+    ]
+  },
+  "studio": {
+    "meta": {
+      "title": "Studio — Who we are — DEMKA DESIGN"
+    },
+    "a11y": {
+      "aboutImageAlt": "Two collaborators in cream jackets looking at a phone against a blue sky",
+      "milestones": "Studio milestones by year"
+    },
+    "about": {
+      "titleStrong": "Who ",
+      "titleMuted": "We Are",
+      "lead1": "We are a design studio specializing in digital products and user experiences.",
+      "lead2": "From websites and mobile apps to complex systems, our goal is to make products clear, intuitive, and beautifully designed",
+      "cta": "Let's talk",
+      "statProjects": "Projects Delivered",
+      "statClients": "Happy Clients",
+      "statYears": "Years Experience"
+    },
+    "team": {
+      "kicker": "Meet the team",
+      "title": "The People Behind Studio",
+      "lead": "Our team includes designers, engineers, and storytellers who see design as our language.",
+      "members": {
+        "anastasia": {
+          "name": "Anastasia",
+          "role": "SEO"
+        },
+        "daniel": {
+          "name": "Daniel",
+          "role": "Head of sales"
+        },
+        "pavel": {
+          "name": "Pavel",
+          "role": "Project manager"
+        },
+        "olga": {
+          "name": "Olga",
+          "role": "UX/UI Designer"
+        },
+        "zakhar": {
+          "name": "Zakhar",
+          "role": "UX/UI Designer"
+        },
+        "angelina": {
+          "name": "Angelina",
+          "role": "UX/UI Designer"
+        },
+        "marina": {
+          "name": "Marina",
+          "role": "UX/UI Designer"
+        },
+        "lada": {
+          "name": "Lada",
+          "role": "UX/UI Designer"
+        }
+      }
+    },
+    "journey": {
+      "kicker": "Story",
+      "title": "Our journey",
+      "lead": "Each achievement reflects our commitment to excellence and growth.",
+      "items": [
+        "We started the studio with a focus on clarity and product thinking.<br />Our first projects helped define our approach to design.",
+        "We expanded our work to more complex digital products and long-term collaborations. UX and product structure became a core part of our process.",
+        "We refined our approach, focusing on scalable systems and design consistency. Our projects became more structured, precise,<br />and product-driven.",
+        "We continue to evolve, helping teams build clear, functional, and visually refined products. Our focus remains the same &mdash; clarity, structure,<br />and meaningful design."
+      ]
+    },
+    "founder": {
+      "kicker": "From the founder",
+      "ledeStrong": "We believe clarity <br />is at the core of good design &mdash;",
+      "ledeMuted": "I wanted to build a studio <br />where every decision is intentional, and every detail &mdash; from structure to visuals &mdash; works together seamlessly",
+      "mission": "Our mission has always been clear: to create products that feel simple, refined, and meaningful"
+    },
+    "testimonials": {
+      "sectionMark": "Client Testimonials",
+      "sectionTitle": "What Clients Say",
+      "sectionSubtitle": "Don't just take our word for it—hear from the brands we've had the privilege to work with",
+      "cards": [
+        {
+          "text": "The team's multidisciplinary skills blew us away. From AR to 3D animation, they delivered a seamless project that exceeded expectations.",
+          "name": "David Kim",
+          "role": "Creative Director at Horizon"
+        },
+        {
+          "text": "Working with Studio was transformative. They understood our vision and delivered a brand identity that exceeded all expectations",
+          "name": "Olivia White",
+          "role": "Operations Lead at Flow Digital"
+        },
+        {
+          "text": "The team's expertise in UX design completely revolutionized our product. User engagement increased by 300% after the redesign.",
+          "name": "Olivia White",
+          "role": "Operations Lead at Flow Digital"
+        },
+        {
+          "text": "Professional, creative, and always ahead of schedule. Studio brought our e-commerce platform to life with a design that's both beautiful and conversion-focused",
+          "name": "Olivia White",
+          "role": "Operations Lead at Flow Digital"
+        },
+        {
+          "text": "Their designs don't just look great; they perform. Since launch, our platform saw a 160% increase in user retention.",
+          "name": "Noah Williams",
+          "role": "CTO at SphereWorks"
+        }
+      ]
+    },
+    "finalCta": {
+      "title": "Let's Create Together",
+      "subtitle": "Get set to turn your awesome ideas into something real!",
+      "button": "Request design"
+    }
+  },
+  "startProject": {
+    "meta": {
+      "title": "Discuss your project — DEMKA DESIGN"
+    },
+    "intro": {
+      "kicker": "Contact",
+      "title": "Discuss your project",
+      "lead": "Tell us a bit about your idea — it won't take long.",
+      "messengerPrefix": "If forms aren't your thing, you can reach us on",
+      "messengerOr": "or",
+      "messengerSuffix": ".",
+      "emailPrefix": "Or send an email at"
+    },
+    "form": {
+      "serviceLegend": "Which service are you interested in?",
+      "services": {
+        "redesign": "Redesign of an existing website or app",
+        "mobile": "Design of mobile app",
+        "website": "Design of web site",
+        "uxAudit": "UX audit and product analysis",
+        "designSystem": "Design system / UI kit development"
+      },
+      "budgetLegend": "Estimated budget (optional)",
+      "budgets": {
+        "upTo5": "Up to $5K",
+        "b5to10": "$5K – $10K",
+        "b10to30": "$10K – $30K",
+        "b30to50": "$30K – $50K",
+        "notSure": "Not sure yet"
+      },
+      "nameLabel": "Your name (optional)",
+      "contactLabel": "Your contact (Telegram, WhatsApp, etc.)",
+      "messageLabel": "Tell us about your idea (optional)",
+      "submitDesktop": "Request design",
+      "submitMobile": "Submit",
+      "disclaimerPrefix": "By submitting, you agree to our",
+      "disclaimerTerms": "Terms",
+      "disclaimerAnd": "and",
+      "disclaimerPrivacy": "Privacy Policy",
+      "disclaimerSuffix": "."
+    }
+  },
+  "finalCta": {
+    "title": "Let's Create Together",
+    "subtitle": "Get set to turn your awesome ideas into something real!",
+    "button": "Request design"
+  },
+  "studioTagline": {
+    "title": "Simple solutions for complex problems"
+  },
+  "footer": {
+    "navigation": "Navigation",
+    "connect": "Connect",
+    "legal": "Legal",
+    "home": "Home",
+    "about": "About",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "copyright": "© 2026 Studio. All rights reserved."
+  }
+}

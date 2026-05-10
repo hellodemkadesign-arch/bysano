@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DEMKA DESIGN — Jenzi</title>
+    <title data-i18n="meta.title">DEMKA DESIGN — Jenzi</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Onest:wght@400&family=Plus+Jakarta+Sans:wght@400;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./styles.css" />
@@ -15,8 +15,9 @@
   <body>
     <div class="page">
       <section class="hero">
-        <div class="glow-top" aria-hidden="true"></div>
-        <div class="glow-bottom" aria-hidden="true"></div>
+        <video class="hero-video" autoplay muted loop playsinline aria-hidden="true">
+          <source src="./jenzi_hero_animation.mp4" type="video/mp4" />
+        </video>
 
         <header class="nav">
           <a class="logo" href="/">
@@ -24,38 +25,71 @@
             <span class="logo-line logo-accent">DESIGN.</span>
           </a>
           <div class="menu-wrap">
-            <nav aria-label="Primary">
+            <nav aria-label="Primary" data-i18n-aria-label="a11y.navPrimary">
               <ul class="menu">
-                <li><a class="menu-link" href="./work.html">Work</a></li>
-                <li><a class="menu-link" href="#services">Services</a></li>
-                <li><a class="menu-link" href="./studio.html">Studio</a></li>
-                <li><a class="menu-link" href="#contact">Contact</a></li>
+                <li><a class="menu-link" href="./work.html" data-i18n="nav.work">Work</a></li>
+                <li><a class="menu-link" href="#services" data-i18n="nav.services">Services</a></li>
+                <li><a class="menu-link" href="./studio.html" data-i18n="nav.studio">Studio</a></li>
+                <li><a class="menu-link" href="#contact" data-i18n="nav.contact">Contact</a></li>
               </ul>
             </nav>
           </div>
-          <div class="nav-cta">
-            <a class="cta" href="./start-project.html">Start a project</a>
+          <div class="nav-end">
+            <div class="nav-actions">
+              <div class="nav-lang nav-lang-desktop" role="group" data-i18n-aria-label="a11y.langSwitcher">
+                <button type="button" class="nav-lang-btn" data-lang="en" aria-pressed="false">EN</button>
+                <span class="nav-lang-divider" aria-hidden="true"></span>
+                <button type="button" class="nav-lang-btn" data-lang="ru" aria-pressed="false">RU</button>
+              </div>
+              <div class="nav-lang-mobile">
+                <button
+                  type="button"
+                  class="nav-lang-mobile-trigger"
+                  aria-expanded="false"
+                  aria-haspopup="listbox"
+                  aria-controls="nav-lang-mobile-list"
+                  data-i18n-aria-label="a11y.langMenuChoose"
+                >
+                  <span class="nav-lang-mobile-current">EN</span>
+                  <svg class="nav-lang-mobile-chevron" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path fill="currentColor" d="M12 15.4 6.3 9.7 7.2 8.8l4.8 4.8 4.8-4.8.9.9-5.7 5.7z" />
+                  </svg>
+                </button>
+                <ul class="nav-lang-mobile-list" id="nav-lang-mobile-list" role="listbox" hidden>
+                  <li role="none">
+                    <button type="button" class="nav-lang-mobile-option" role="option" data-lang="en" aria-selected="true">EN</button>
+                  </li>
+                  <li role="none">
+                    <button type="button" class="nav-lang-mobile-option" role="option" data-lang="ru" aria-selected="false">RU</button>
+                  </li>
+                </ul>
+              </div>
+              <div class="nav-cta">
+                <a class="cta" href="./start-project.html" data-i18n="nav.cta">Start a project</a>
+              </div>
+            </div>
+            <button
+              type="button"
+              class="nav-toggle"
+              id="nav-toggle"
+              aria-expanded="false"
+              aria-controls="nav-mobile-panel"
+              aria-label="Open menu"
+              data-i18n-aria-label="a11y.menuOpen"
+            >
+              <span class="nav-toggle-bar" aria-hidden="true"></span>
+              <span class="nav-toggle-bar" aria-hidden="true"></span>
+            </button>
           </div>
-          <button
-            type="button"
-            class="nav-toggle"
-            id="nav-toggle"
-            aria-expanded="false"
-            aria-controls="nav-mobile-panel"
-            aria-label="Open menu"
-          >
-            <span class="nav-toggle-bar" aria-hidden="true"></span>
-            <span class="nav-toggle-bar" aria-hidden="true"></span>
-          </button>
           <div class="nav-mobile-menu" id="nav-mobile-panel" hidden>
-            <nav aria-label="Primary (mobile)">
+            <nav aria-label="Primary (mobile)" data-i18n-aria-label="a11y.navPrimaryMobile">
               <ul class="nav-mobile-list">
-                <li><a class="nav-mobile-link" href="./work.html">Work</a></li>
-                <li><a class="nav-mobile-link" href="#services">Services</a></li>
-                <li><a class="nav-mobile-link" href="./studio.html">Studio</a></li>
-                <li><a class="nav-mobile-link" href="#contact">Contact</a></li>
+                <li><a class="nav-mobile-link" href="./work.html" data-i18n="nav.work">Work</a></li>
+                <li><a class="nav-mobile-link" href="#services" data-i18n="nav.services">Services</a></li>
+                <li><a class="nav-mobile-link" href="./studio.html" data-i18n="nav.studio">Studio</a></li>
+                <li><a class="nav-mobile-link" href="#contact" data-i18n="nav.contact">Contact</a></li>
               </ul>
-              <a class="cta cta--nav-dark nav-mobile-cta" href="./start-project.html">Start a project</a>
+              <a class="cta cta--nav-dark nav-mobile-cta" href="./start-project.html" data-i18n="nav.cta">Start a project</a>
             </nav>
           </div>
         </header>
@@ -63,58 +97,47 @@
         <main class="main">
           <div class="hero-stack">
             <h1 class="headline">
-              Turning complex ideas
+              <span data-i18n="hero.line1">Turning complex ideas</span>
               <br />
               <span class="headline-line2">
-                <span class="headline-into">into</span><span class="headline-muted"> clear digital products</span>
+                <span class="headline-into" data-i18n="hero.into">into</span><span class="headline-muted" data-i18n="hero.muted"> clear digital products</span>
               </span>
             </h1>
-            <p class="subtitle">
+            <p class="subtitle" data-i18n="hero.subtitle">
               We design intuitive, modern interfaces for startups and growing businesses —
               from concept to final UI
             </p>
-            <a class="cta" href="./start-project.html">Start a project</a>
+            <a class="cta" href="./start-project.html" data-i18n="nav.cta">Start a project</a>
           </div>
 
-          <div class="phone-section" aria-hidden="true">
-            <div class="phone-slot">
-              <img
-                class="hero-device"
-                src="./hero-image1.png"
-                alt=""
-                width="1520"
-                height="2304"
-                decoding="async"
-              />
-            </div>
-          </div>
         </main>
       </section>
 
       <section class="featured-work" id="work">
         <div class="featured-work-inner">
           <header class="section-header">
-            <span class="section-mark">Work</span>
-            <h2 class="section-title">Featured Projects</h2>
-            <p class="section-subtitle">
+            <span class="section-mark" data-i18n="work.mark">Work</span>
+            <h2 class="section-title" data-i18n="work.title">Featured Projects</h2>
+            <p class="section-subtitle" data-i18n="work.subtitle">
               A curated selection of our recent work across branding, digital design, and
               interactive experiences
             </p>
           </header>
 
           <div class="project-grid">
-            <a class="project-card" href="./e-commerce-platform.html" aria-label="Open E-commerce Platform case study">
+            <a class="project-card" href="./e-commerce-platform.html" data-i18n-aria-label="a11y.projectEcommerceAria" aria-label="Open E-commerce Platform case study">
               <img
                 class="project-image"
                 src="./e-commerce-banner.png"
                 alt="E-commerce Platform project preview"
+                data-i18n-alt="projects.ecommerce.imgAlt"
                 loading="lazy"
                 decoding="async"
               />
               <div class="project-card-overlay" aria-hidden="true"></div>
               <div class="project-card-content">
-                <h3 class="project-title">E-commerce Platform</h3>
-                <p class="project-description">
+                <h3 class="project-title" data-i18n="projects.ecommerce.title">E-commerce Platform</h3>
+                <p class="project-description" data-i18n="projects.ecommerce.description">
                   Online store for a local brand with 1C and CDEK integration, loyalty system,
                   promo codes, and stories
                 </p>
@@ -126,31 +149,33 @@
                 class="project-image"
                 src="./dating_app_banner.png"
                 alt="Dating App project preview"
+                data-i18n-alt="projects.dating.imgAlt"
                 loading="lazy"
                 decoding="async"
               />
               <div class="project-card-overlay" aria-hidden="true"></div>
               <div class="project-card-content">
-                <h3 class="project-title">Dating App</h3>
-                <p class="project-description">
+                <h3 class="project-title" data-i18n="projects.dating.title">Dating App</h3>
+                <p class="project-description" data-i18n="projects.dating.description">
                   Subscription-based dating app with a unique gamified experience. Designed for
                   the Turkish market
                 </p>
               </div>
             </article>
 
-            <a class="project-card" href="./taxi-service.html" aria-label="Open Taxi Service case study">
+            <a class="project-card" href="./taxi-service.html" data-i18n-aria-label="a11y.projectTaxiAria" aria-label="Open Taxi Service case study">
               <img
                 class="project-image"
                 src="./taxi-service-banner.png"
                 alt="Taxi Service project preview"
+                data-i18n-alt="projects.taxi.imgAlt"
                 loading="lazy"
                 decoding="async"
               />
               <div class="project-card-overlay" aria-hidden="true"></div>
               <div class="project-card-content">
-                <h3 class="project-title">Taxi Service</h3>
-                <p class="project-description">
+                <h3 class="project-title" data-i18n="projects.taxi.title">Taxi Service</h3>
+                <p class="project-description" data-i18n="projects.taxi.description">
                   A taxi platform for small cities in the Chelyabinsk region, including passenger
                   and driver apps, along with an admin panel tailored to local infrastructure
                 </p>
@@ -162,13 +187,14 @@
                 class="project-image"
                 src="./finance_tracker.png"
                 alt="Finance Tracker project preview"
+                data-i18n-alt="projects.finance.imgAlt"
                 loading="lazy"
                 decoding="async"
               />
               <div class="project-card-overlay" aria-hidden="true"></div>
               <div class="project-card-content">
-                <h3 class="project-title">Finance Tracker</h3>
-                <p class="project-description">
+                <h3 class="project-title" data-i18n="projects.finance.title">Finance Tracker</h3>
+                <p class="project-description" data-i18n="projects.finance.description">
                   A personal finance management app with bank integrations and real-time market
                   data via API
                 </p>
@@ -176,16 +202,16 @@
             </article>
           </div>
 
-          <a class="cta cta-outline" href="./work.html">Explore all projects</a>
+          <a class="cta cta-outline" href="./work.html" data-i18n="work.explore">Explore all projects</a>
         </div>
       </section>
 
       <section class="services" id="services">
         <div class="services-inner">
           <header class="section-header">
-            <span class="section-mark">What We Do</span>
-            <h2 class="section-title">Our Services</h2>
-            <p class="section-subtitle">
+            <span class="section-mark" data-i18n="services.sectionMark">What We Do</span>
+            <h2 class="section-title" data-i18n="services.sectionTitle">Our Services</h2>
+            <p class="section-subtitle" data-i18n="services.sectionSubtitle">
               Comprehensive design and development services to transform your vision into reality
             </p>
           </header>
@@ -195,12 +221,12 @@
               <article class="service-card service-card--wide service-card--accent">
                 <div class="service-card-header">
                   <span class="service-number">01</span>
-                  <h3 class="service-card-title">Product Research <br />&amp; Analysis</h3>
+                  <h3 class="service-card-title"><span data-i18n="services.s01.title1">Product Research </span><br /><span data-i18n="services.s01.title2">&amp; Analysis</span></h3>
                 </div>
                 <div class="service-card-icon" aria-hidden="true">
                   <img src="./circle_first.svg" alt="" loading="lazy" decoding="async" />
                 </div>
-                <ul class="service-list">
+                <ul class="service-list" data-i18n-list="services.s01.items">
                   <li>Product and business analysis</li>
                   <li>UX audits</li>
                   <li>Market and competitor research</li>
@@ -211,9 +237,9 @@
               <article class="service-card service-card--narrow service-card--neutral">
                 <div class="service-card-header">
                   <span class="service-number">02</span>
-                  <h3 class="service-card-title">UX Design</h3>
+                  <h3 class="service-card-title" data-i18n="services.s02.title">UX Design</h3>
                 </div>
-                <ul class="service-list">
+                <ul class="service-list" data-i18n-list="services.s02.items">
                   <li>Product structure design (information architecture)</li>
                   <li>User flows and scenarios</li>
                   <li>Wireframes and prototypes</li>
@@ -225,9 +251,9 @@
               <article class="service-card service-card--narrow service-card--neutral">
                 <div class="service-card-header">
                   <span class="service-number">03</span>
-                  <h3 class="service-card-title">UI/UX Design</h3>
+                  <h3 class="service-card-title" data-i18n="services.s03.title">UI/UX Design</h3>
                 </div>
-                <ul class="service-list">
+                <ul class="service-list" data-i18n-list="services.s03.items">
                   <li>Mobile app design (iOS / Android)</li>
                   <li>Web platforms and services</li>
                   <li>Website and landing page design</li>
@@ -239,12 +265,12 @@
               <article class="service-card service-card--wide service-card--neutral">
                 <div class="service-card-header">
                   <span class="service-number">04</span>
-                  <h3 class="service-card-title">Product Launch</h3>
+                  <h3 class="service-card-title" data-i18n="services.s04.title">Product Launch</h3>
                 </div>
                 <div class="service-card-icon" aria-hidden="true">
                   <img src="./arrows.svg" alt="" loading="lazy" decoding="async" />
                 </div>
-                <ul class="service-list">
+                <ul class="service-list" data-i18n-list="services.s04.items">
                   <li>MVP design for startups</li>
                   <li>Product concept and visual direction</li>
                 </ul>
@@ -255,12 +281,12 @@
               <article class="service-card service-card--wide service-card--neutral">
                 <div class="service-card-header">
                   <span class="service-number">05</span>
-                  <h3 class="service-card-title">Development Support</h3>
+                  <h3 class="service-card-title" data-i18n="services.s05.title">Development Support</h3>
                 </div>
                 <div class="service-card-icon" aria-hidden="true">
                   <img src="./development_support.svg" alt="" loading="lazy" decoding="async" />
                 </div>
-                <ul class="service-list">
+                <ul class="service-list" data-i18n-list="services.s05.items">
                   <li>Design handoff</li>
                   <li>Design review during development</li>
                   <li>Implementation quality control</li>
@@ -270,9 +296,9 @@
               <article class="service-card service-card--narrow service-card--lime">
                 <div class="service-card-header">
                   <span class="service-number">06</span>
-                  <h3 class="service-card-title">Development Management</h3>
+                  <h3 class="service-card-title"><span data-i18n="services.s06.title1">Development </span><br /><span data-i18n="services.s06.title2">Management</span></h3>
                 </div>
-                <ul class="service-list">
+                <ul class="service-list" data-i18n-list="services.s06.items">
                   <li>Hiring development teams via partner studios</li>
                   <li>Product delivery quality control</li>
                 </ul>
@@ -285,9 +311,9 @@
       <section class="process" id="process" aria-labelledby="process-title">
         <div class="process-inner">
           <header class="section-header">
-            <span class="section-mark">Our Process</span>
-            <h2 class="section-title" id="process-title">How We Work</h2>
-            <p class="section-subtitle">A proven methodology that delivers exceptional results through collaboration and iteration</p>
+            <span class="section-mark" data-i18n="process.sectionMark">Our Process</span>
+            <h2 class="section-title" id="process-title" data-i18n="process.sectionTitle">How We Work</h2>
+            <p class="section-subtitle" data-i18n="process.sectionSubtitle">A proven methodology that delivers exceptional results through collaboration and iteration</p>
           </header>
 
           <ol class="process-list">
@@ -334,33 +360,33 @@
         <div class="about-inner">
           <div class="about-top">
             <div class="about-info">
-              <span class="section-mark">About Studio</span>
+              <span class="section-mark" data-i18n="about.sectionMark">About Studio</span>
               <div class="about-copy">
-                <h2 class="about-title" id="about-title">We&rsquo;re a team<br />of creative minds</h2>
-                <p class="about-description">Founded in 2018, our studio brings together world-class designers and developers who share a passion for creating exceptional digital experiences.</p>
-                <p class="about-description">We believe in the power of design to transform businesses and create meaningful connections with audiences. Every project is an opportunity to push boundaries and craft something extraordinary.</p>
+                <h2 class="about-title" id="about-title"><span data-i18n="about.title1">We're a team</span><br /><span data-i18n="about.title2">of creative minds</span></h2>
+                <p class="about-description" data-i18n="about.p1">Founded in 2018, our studio brings together world-class designers and developers who share a passion for creating exceptional digital experiences.</p>
+                <p class="about-description" data-i18n="about.p2">We believe in the power of design to transform businesses and create meaningful connections with audiences. Every project is an opportunity to push boundaries and craft something extraordinary.</p>
               </div>
-              <a href="#contact" class="cta cta-outline about-cta">Let&rsquo;s Talk</a>
+              <a href="#contact" class="cta cta-outline about-cta" data-i18n="about.cta">Let's Talk</a>
             </div>
             <div class="about-media">
-              <img class="about-image" src="./peopple.png" alt="Two people sharing a moment" loading="lazy" decoding="async" />
+              <img class="about-image" src="./peopple.png" alt="Two people sharing a moment" data-i18n-alt="a11y.aboutImageAlt" loading="lazy" decoding="async" />
             </div>
           </div>
 
           <ul class="stats-row">
             <li class="stat stat--accent">
               <img class="stat-icon" src="./Iconly/Regular/Outline/projects_delivered.svg" alt="" aria-hidden="true" loading="lazy" decoding="async" />
-              <p class="stat-label">Projects Delivered</p>
+              <p class="stat-label" data-i18n="about.statProjects">Projects Delivered</p>
               <p class="stat-value">150+</p>
             </li>
             <li class="stat stat--neutral">
               <img class="stat-icon" src="./Iconly/Regular/Outline/happy_clients.svg" alt="" aria-hidden="true" loading="lazy" decoding="async" />
-              <p class="stat-label">Happy Clients</p>
+              <p class="stat-label" data-i18n="about.statClients">Happy Clients</p>
               <p class="stat-value">50+</p>
             </li>
             <li class="stat stat--lime">
               <img class="stat-icon" src="./Iconly/Regular/Outline/experience.svg" alt="" aria-hidden="true" loading="lazy" decoding="async" />
-              <p class="stat-label">Years Experience</p>
+              <p class="stat-label" data-i18n="about.statYears">Years Experience</p>
               <p class="stat-value">8+</p>
             </li>
           </ul>
@@ -370,9 +396,9 @@
       <section class="pricing" id="pricing" aria-labelledby="pricing-title">
         <div class="pricing-inner">
           <header class="section-header">
-            <span class="section-mark">Pricing</span>
-            <h2 class="section-title" id="pricing-title">Flexible plans for every business</h2>
-            <p class="section-subtitle">Clear pricing, no hidden fees. Choose the plan that works best for your goals.</p>
+            <span class="section-mark" data-i18n="pricing.sectionMark">Pricing</span>
+            <h2 class="section-title" id="pricing-title" data-i18n="pricing.sectionTitle">Flexible plans for every business</h2>
+            <p class="section-subtitle" data-i18n="pricing.sectionSubtitle">Clear pricing, no hidden fees. Choose the plan that works best for your goals.</p>
           </header>
 
           <ul class="pricing-grid">
@@ -382,20 +408,20 @@
                   <div class="pricing-icon" aria-hidden="true">
                     <img src="./paperclip.svg" alt="" loading="lazy" decoding="async" />
                   </div>
-                  <h3 class="pricing-title">Full Project</h3>
-                  <p class="pricing-description">We handle the entire design process &mdash; from research to final UI.<br />Best for new products, MVPs, and full redesigns.</p>
+                  <h3 class="pricing-title" data-i18n="pricing.full.title">Full Project</h3>
+                  <p class="pricing-description" data-i18n-html="pricing.full.description">We handle the entire design process &mdash; from research to final UI.<br />Best for new products, MVPs, and full redesigns.</p>
                   <ul class="pricing-features">
                     <li class="pricing-feature">
                       <svg class="pricing-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4.5 12.5l4.5 4.5L19.5 6.5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                      End-to-end process
+                      <span data-i18n="pricing.full.f1">End-to-end process</span>
                     </li>
                     <li class="pricing-feature">
                       <svg class="pricing-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4.5 12.5l4.5 4.5L19.5 6.5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                      Clear scope
+                      <span data-i18n="pricing.full.f2">Clear scope</span>
                     </li>
                     <li class="pricing-feature">
                       <svg class="pricing-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4.5 12.5l4.5 4.5L19.5 6.5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                      Structured delivery
+                      <span data-i18n="pricing.full.f3">Structured delivery</span>
                     </li>
                   </ul>
                 </div>
@@ -403,7 +429,7 @@
                   <span class="pricing-price-value">$8,500</span>
                 </div>
               </div>
-              <a href="./start-project.html" class="cta pricing-cta">Start a Project</a>
+              <a href="./start-project.html" class="cta pricing-cta" data-i18n="pricing.full.cta">Start a Project</a>
             </li>
 
             <li class="pricing-card">
@@ -412,29 +438,29 @@
                   <div class="pricing-icon" aria-hidden="true">
                     <img src="./paperclip.svg" alt="" loading="lazy" decoding="async" />
                   </div>
-                  <h3 class="pricing-title">Dedicated Team</h3>
-                  <p class="pricing-description">A design team integrated into your workflow for ongoing product development.<br />Ideal for long-term collaboration and scaling products.</p>
+                  <h3 class="pricing-title" data-i18n="pricing.team.title">Dedicated Team</h3>
+                  <p class="pricing-description" data-i18n-html="pricing.team.description">A design team integrated into your workflow for ongoing product development.<br />Ideal for long-term collaboration and scaling products.</p>
                   <ul class="pricing-features">
                     <li class="pricing-feature">
                       <svg class="pricing-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4.5 12.5l4.5 4.5L19.5 6.5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                      Monthly collaboration
+                      <span data-i18n="pricing.team.f1">Monthly collaboration</span>
                     </li>
                     <li class="pricing-feature">
                       <svg class="pricing-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4.5 12.5l4.5 4.5L19.5 6.5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                      Flexible scope
+                      <span data-i18n="pricing.team.f2">Flexible scope</span>
                     </li>
                     <li class="pricing-feature">
                       <svg class="pricing-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4.5 12.5l4.5 4.5L19.5 6.5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                      Continuous support
+                      <span data-i18n="pricing.team.f3">Continuous support</span>
                     </li>
                   </ul>
                 </div>
                 <div class="pricing-price">
                   <span class="pricing-price-value">$2,500</span>
-                  <span class="pricing-price-period">/month</span>
+                  <span class="pricing-price-period" data-i18n="pricing.team.period">/month</span>
                 </div>
               </div>
-              <a href="./start-project.html" class="cta pricing-cta">Start a Project</a>
+              <a href="./start-project.html" class="cta pricing-cta" data-i18n="pricing.team.cta">Start a Project</a>
             </li>
 
             <li class="pricing-card">
@@ -443,29 +469,29 @@
                   <div class="pricing-icon" aria-hidden="true">
                     <img src="./paperclip.svg" alt="" loading="lazy" decoding="async" />
                   </div>
-                  <h3 class="pricing-title">On-Demand</h3>
-                  <p class="pricing-description">Flexible design support for specific tasks or quick iterations.<br />Perfect for small improvements, updates, or urgent needs</p>
+                  <h3 class="pricing-title" data-i18n="pricing.ondemand.title">On-Demand</h3>
+                  <p class="pricing-description" data-i18n-html="pricing.ondemand.description">Flexible design support for specific tasks or quick iterations.<br />Perfect for small improvements, updates, or urgent needs</p>
                   <ul class="pricing-features">
                     <li class="pricing-feature">
                       <svg class="pricing-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4.5 12.5l4.5 4.5L19.5 6.5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                      Hourly work
+                      <span data-i18n="pricing.ondemand.f1">Hourly work</span>
                     </li>
                     <li class="pricing-feature">
                       <svg class="pricing-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4.5 12.5l4.5 4.5L19.5 6.5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                      Fast turnaround
+                      <span data-i18n="pricing.ondemand.f2">Fast turnaround</span>
                     </li>
                     <li class="pricing-feature">
                       <svg class="pricing-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4.5 12.5l4.5 4.5L19.5 6.5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                      No long-term commitment
+                      <span data-i18n="pricing.ondemand.f3">No long-term commitment</span>
                     </li>
                   </ul>
                 </div>
                 <div class="pricing-price">
                   <span class="pricing-price-value">$140</span>
-                  <span class="pricing-price-period">/hour</span>
+                  <span class="pricing-price-period" data-i18n="pricing.ondemand.period">/hour</span>
                 </div>
               </div>
-              <a href="./start-project.html" class="cta pricing-cta">Start a Project</a>
+              <a href="./start-project.html" class="cta pricing-cta" data-i18n="pricing.ondemand.cta">Start a Project</a>
             </li>
           </ul>
         </div>
@@ -474,9 +500,9 @@
       <section class="testimonials" id="testimonials" aria-labelledby="testimonials-title">
         <div class="testimonials-inner">
           <header class="section-header">
-            <span class="section-mark">Client Testimonials</span>
-            <h2 class="section-title" id="testimonials-title">What Clients Say</h2>
-            <p class="section-subtitle">Don&rsquo;t just take our word for it&mdash;hear from the brands we&rsquo;ve had the privilege to work with</p>
+            <span class="section-mark" data-i18n="testimonials.sectionMark">Client Testimonials</span>
+            <h2 class="section-title" id="testimonials-title" data-i18n="testimonials.sectionTitle">What Clients Say</h2>
+            <p class="section-subtitle" data-i18n="testimonials.sectionSubtitle">Don&rsquo;t just take our word for it&mdash;hear from the brands we&rsquo;ve had the privilege to work with</p>
           </header>
 
           <div class="testimonials-viewport">
@@ -563,45 +589,45 @@
       <section class="final-cta" id="contact" aria-labelledby="final-cta-title">
         <div class="final-cta-inner">
           <div class="final-cta-copy">
-            <h2 class="final-cta-title" id="final-cta-title">Let&rsquo;s Create Together</h2>
-            <p class="final-cta-subtitle">Get set to turn your awesome ideas into something real!</p>
+            <h2 class="final-cta-title" id="final-cta-title" data-i18n="finalCta.title">Let&rsquo;s Create Together</h2>
+            <p class="final-cta-subtitle" data-i18n="finalCta.subtitle">Get set to turn your awesome ideas into something real!</p>
           </div>
-          <a href="./start-project.html" class="final-cta-button">Request design</a>
+          <a href="./start-project.html" class="final-cta-button" data-i18n="finalCta.button">Request design</a>
         </div>
       </section>
 
       <section class="studio-tagline" aria-labelledby="studio-tagline-title">
         <div class="studio-tagline-inner">
-          <img class="studio-tagline-mark" src="./brand_icon.svg" alt="Demka Design mark" width="93" height="93" />
-          <h2 class="studio-tagline-title" id="studio-tagline-title">Simple solutions for complex problems</h2>
+          <img class="studio-tagline-mark" src="./brand_icon.svg" alt="Demka Design mark" data-i18n-alt="a11y.brandMarkAlt" width="93" height="93" />
+          <h2 class="studio-tagline-title" id="studio-tagline-title" data-i18n="studioTagline.title">Simple solutions for complex problems</h2>
         </div>
       </section>
 
       <footer class="site-footer" aria-labelledby="site-footer-title">
-        <h2 class="sr-only" id="site-footer-title">Site footer</h2>
+        <h2 class="sr-only" id="site-footer-title" data-i18n="a11y.footerTitle">Site footer</h2>
         <div class="site-footer-inner">
           <div class="site-footer-top">
             <div class="site-footer-brand">
-              <a class="site-footer-logo" href="/" aria-label="Demka Design — home">
-                <img src="./bottom_logo.svg" alt="Demka Design" width="124" height="52" />
+              <a class="site-footer-logo" href="/" data-i18n-aria-label="a11y.footerLogoHome" aria-label="Demka Design — home">
+                <img src="./bottom_logo.svg" alt="Demka Design" data-i18n-alt="a11y.footerLogoAlt" width="124" height="52" />
               </a>
               <a class="site-footer-email" href="mailto:hello@studio.com">hello@studio.com</a>
             </div>
 
             <div class="site-footer-columns">
               <nav class="site-footer-column" aria-labelledby="footer-col-navigation">
-                <p class="site-footer-column-title" id="footer-col-navigation">Navigation</p>
+                <p class="site-footer-column-title" id="footer-col-navigation" data-i18n="footer.navigation">Navigation</p>
                 <ul class="site-footer-links">
-                  <li><a href="#hero">Home</a></li>
-                  <li><a href="./work.html">Work</a></li>
-                  <li><a href="./studio.html">Studio</a></li>
-                  <li><a href="#about">About</a></li>
-                  <li><a href="#contact">Contact</a></li>
+                  <li><a href="#hero" data-i18n="footer.home">Home</a></li>
+                  <li><a href="./work.html" data-i18n="nav.work">Work</a></li>
+                  <li><a href="./studio.html" data-i18n="nav.studio">Studio</a></li>
+                  <li><a href="#about" data-i18n="footer.about">About</a></li>
+                  <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
                 </ul>
               </nav>
 
               <nav class="site-footer-column" aria-labelledby="footer-col-connect">
-                <p class="site-footer-column-title" id="footer-col-connect">Connect</p>
+                <p class="site-footer-column-title" id="footer-col-connect" data-i18n="footer.connect">Connect</p>
                 <ul class="site-footer-links">
                   <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a></li>
                   <li><a href="https://behance.net" target="_blank" rel="noopener noreferrer">Behance</a></li>
@@ -611,18 +637,18 @@
               </nav>
 
               <nav class="site-footer-column" aria-labelledby="footer-col-legal">
-                <p class="site-footer-column-title" id="footer-col-legal">Legal</p>
+                <p class="site-footer-column-title" id="footer-col-legal" data-i18n="footer.legal">Legal</p>
                 <ul class="site-footer-links">
-                  <li><a href="#privacy">Privacy Policy</a></li>
-                  <li><a href="#terms">Terms of Service</a></li>
+                  <li><a href="#privacy" data-i18n="footer.privacy">Privacy Policy</a></li>
+                  <li><a href="#terms" data-i18n="footer.terms">Terms of Service</a></li>
                 </ul>
               </nav>
             </div>
           </div>
 
           <div class="site-footer-bottom">
-            <p class="site-footer-copyright">&copy; 2026 Studio. All rights reserved.</p>
-            <a class="site-footer-top-link" href="#top" aria-label="Back to top">
+            <p class="site-footer-copyright" data-i18n="footer.copyright">&copy; 2026 Studio. All rights reserved.</p>
+            <a class="site-footer-top-link" href="#top" data-i18n-aria-label="a11y.backToTop" aria-label="Back to top">
               <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                 <path d="M12 5l-7 7 1.41 1.41L11 8.83V19h2V8.83l4.59 4.58L19 12z" fill="currentColor"/>
               </svg>
@@ -631,6 +657,7 @@
         </div>
       </footer>
     </div>
+    <script src="./js/i18n.js"></script>
     <script>
       (function () {
         var nav = document.querySelector(".nav");
@@ -638,17 +665,26 @@
         var panel = document.getElementById("nav-mobile-panel");
         if (!nav || !btn || !panel) return;
 
+        function menuAria(open) {
+          var L = window.__SITE_I18N__ || { menuOpen: "Open menu", menuClose: "Close menu" };
+          btn.setAttribute("aria-label", open ? L.menuClose : L.menuOpen);
+        }
+
         function setOpen(open) {
           nav.classList.toggle("nav--menu-open", open);
           document.body.classList.toggle("nav-mobile-open", open);
           btn.setAttribute("aria-expanded", open ? "true" : "false");
-          btn.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+          menuAria(open);
           if (open) {
             panel.removeAttribute("hidden");
           } else {
             panel.setAttribute("hidden", "");
           }
         }
+
+        document.addEventListener("localeapplied", function () {
+          menuAria(nav.classList.contains("nav--menu-open"));
+        });
 
         btn.addEventListener("click", function () {
           setOpen(!nav.classList.contains("nav--menu-open"));
