@@ -39,7 +39,6 @@ body.nav-mobile-open {
   --ink-muted: #666666;
   --surface: #ffffff;
   --stroke: #1c1b17;
-  --nav-shadow: 0 4px 60px rgba(4, 6, 15, 0.12);
 
   position: relative;
   min-height: 100vh;
@@ -93,7 +92,6 @@ body.nav-mobile-open {
   max-width: 1440px;
   margin: 0 auto;
   padding: 16px clamp(20px, 5vw, 120px);
-  box-shadow: var(--nav-shadow);
 }
 
 .logo {
@@ -434,13 +432,20 @@ body.nav-mobile-open {
 
 .headline {
   margin: 0;
-  /* Figma node 40004121:12964 — 80px / lh 100 / tracking -4.8px */
+  /* Figma Main Text Container — EN: Be Vietnam Pro Medium 80 / lh 100 / tracking -4.8px */
+  font-family: "Be Vietnam Pro", "Inter", system-ui, sans-serif;
   font-size: clamp(2.5rem, 5.56vw, 5rem);
   font-weight: 500;
   line-height: 1.25;
   letter-spacing: -0.06em;
   text-wrap: balance;
   max-width: 1233px;
+}
+
+html[lang="ru"] .hero .headline {
+  /* Figma RU frame — Onest SemiBold 80 / lh 100 */
+  font-family: "Onest", "Be Vietnam Pro", system-ui, sans-serif;
+  font-weight: 600;
 }
 
 .headline-line2 {
@@ -457,18 +462,19 @@ body.nav-mobile-open {
   color: #ffffff;
 }
 
-.headline-muted {
-  color: var(--text-muted);
+.hero .headline-muted {
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .subtitle {
   margin: 0;
-  max-width: 417px;
-  font-family: "Inter", "Be Vietnam Pro", system-ui, sans-serif;
+  max-width: 513px;
+  font-family: "Inter", system-ui, sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
-  color: rgba(255, 255, 255, 0.92);
+  letter-spacing: 0;
+  color: #ffffff;
 }
 
 .nav-toggle {
@@ -2062,16 +2068,21 @@ body.nav-mobile-open {
     letter-spacing: -0.03em;
   }
 
+  html[lang="ru"] .hero .headline {
+    font-family: "Onest", system-ui, sans-serif;
+    font-weight: 600;
+  }
+
   .headline-line2 {
     white-space: normal;
   }
 
   .subtitle {
     max-width: 100%;
-    font-family: "Inter", "Be Vietnam Pro", system-ui, sans-serif;
-    font-size: 20px;
-    line-height: 1.6;
-    letter-spacing: -0.04em;
+    font-family: "Inter", system-ui, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0;
   }
 
   .work-hero-title-strong,
